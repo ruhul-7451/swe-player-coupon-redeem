@@ -3,6 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Player } from 'src/entities/Player';
 import { CreatePlayerDto } from 'src/player/dtos/CreatePlayer.dto';
+import { UpdatePlayerDto } from 'src/player/dtos/UpdatePlayer.dto';
 
 @Injectable()
 export class PlayerService {
@@ -22,5 +23,25 @@ export class PlayerService {
   async getPlayers() {
     const players = await this.playerRepository.find();
     return players;
+  }
+
+  async updatePlayerById(id: number, updatePlayerDto: UpdatePlayerDto) {
+    const player = await this.playerRepository.findOne({ where: { id } });
+    if (!player) {
+      throw new Error('Player not found');
+    }
+    const updatedPlayer = await this.playerRepository.save({
+      ...player,
+      ...updatePlayerDto,
+    });
+    return updatedPlayer;
+  }
+
+  async getPlayerById(id: number) {
+    const player = await this.playerRepository.findOne({ where: { id } });
+    if (!player) {
+      throw new Error('Player not found');
+    }
+    return player;
   }
 }
