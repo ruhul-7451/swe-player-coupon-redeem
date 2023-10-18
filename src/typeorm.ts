@@ -18,7 +18,7 @@ const config = {
   entities: [Player, Reward, Coupon, PlayerCoupon],
   migrations: process.env.typeorm === 'true' ? ['migrations/*.ts'] : [],
   autoLoadEntities: true,
-  synchronize: false,
+  synchronize: true,
 };
 
 export default registerAs('typeorm', () => config);
