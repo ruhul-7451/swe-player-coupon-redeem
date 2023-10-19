@@ -3,6 +3,7 @@ import {
   PrimaryGeneratedColumn,
   CreateDateColumn,
   ManyToOne,
+  RelationId,
 } from 'typeorm';
 import { Player } from './Player';
 import { Coupon } from './Coupon';

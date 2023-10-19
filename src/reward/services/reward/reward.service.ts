@@ -18,4 +18,8 @@ export class RewardService {
     await this.rewardRepository.save(reward);
     return reward;
   }
+
+  async getRewardById(id: number) {
+    return await this.rewardRepository.findOne({ where: { id } });
+  }
 }
