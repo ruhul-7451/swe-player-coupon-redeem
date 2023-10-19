@@ -5,6 +5,7 @@ import typeorm from './typeorm';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { PlayerModule } from './player/player.module';
+import { RewardModule } from './reward/reward.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { PlayerModule } from './player/player.module';
         configService.get('typeorm'),
     }),
     PlayerModule,
+    RewardModule,
   ],
   controllers: [AppController],
   providers: [AppService],
