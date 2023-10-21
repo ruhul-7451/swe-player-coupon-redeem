@@ -50,11 +50,6 @@ export class CouponService {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
-    console.log({
-      player,
-      coupon: rewardId,
-      redeemedAt: today,
-    });
     // Validate per-day limit
     const playerDailyCoupons = await this.playerCouponRepository.count({
       where: {
