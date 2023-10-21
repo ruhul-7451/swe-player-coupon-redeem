@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { INestApplication } from '@nestjs/common';
+import { HttpStatus, INestApplication } from '@nestjs/common';
 import * as request from 'supertest';
 import { AppModule } from './../src/app.module';
 
@@ -15,10 +15,24 @@ describe('AppController (e2e)', () => {
     await app.init();
   });
 
+  afterAll(async () => {
+    await app.close();
+  });
+
   it('/ (GET)', () => {
     return request(app.getHttpServer())
       .get('/')
       .expect(200)
       .expect('Hello World!');
+  });
+
+  it('should redeem a valid coupon', async () => {
+    const response = await request(app.getHttpServer())
+      .post('/coupon-redeem')
+      .send({ playerId: 1, rewardId: 1 })
+      .expect(HttpStatus.OK);
+
+    expect(response.body.id).toBeDefined();
+    expect(response.body.value).toBeDefined();
   });
 });

@@ -7,9 +7,9 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
-import { CreatePlayerDto } from 'src/player/dtos/CreatePlayer.dto';
-import { UpdatePlayerDto } from 'src/player/dtos/UpdatePlayer.dto';
-import { PlayerService } from 'src/player/services/player/player.service';
+import { CreatePlayerDto } from '../../dtos/CreatePlayer.dto';
+import { UpdatePlayerDto } from '../../dtos/UpdatePlayer.dto';
+import { PlayerService } from '../../services/player/player.service';
 
 @Controller('player')
 export class PlayerController {

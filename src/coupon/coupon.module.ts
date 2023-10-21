@@ -2,11 +2,11 @@ import { Module } from '@nestjs/common';
 import { CouponController } from './controllers/coupon/coupon.controller';
 import { CouponService } from './services/coupon/coupon.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Coupon } from 'src/entities/Coupon';
-import { PlayerCoupon } from 'src/entities/PlayerCoupon';
-import { PlayerModule } from 'src/player/player.module';
-import { RewardModule } from 'src/reward/reward.module';
-import { Reward } from 'src/entities/Reward';
+import { Coupon } from '../entities/Coupon';
+import { PlayerCoupon } from '../entities/PlayerCoupon';
+import { PlayerModule } from '../player/player.module';
+import { RewardModule } from '../reward/reward.module';
+import { Reward } from '../entities/Reward';
 
 @Module({
   imports: [

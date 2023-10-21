@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
-import { CreateRewardDto } from 'src/reward/dtos/CreateReward.dto';
-import { RewardService } from 'src/reward/services/reward/reward.service';
+import { CreateRewardDto } from '../../dtos/CreateReward.dto';
+import { RewardService } from '../../services/reward/reward.service';
 
 @Controller('reward')
 export class RewardController {

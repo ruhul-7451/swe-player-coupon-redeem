@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Player } from 'src/entities/Player';
-import { CreatePlayerDto } from 'src/player/dtos/CreatePlayer.dto';
-import { UpdatePlayerDto } from 'src/player/dtos/UpdatePlayer.dto';
+import { Player } from '../../../entities/Player';
+import { CreatePlayerDto } from '../../dtos/CreatePlayer.dto';
+import { UpdatePlayerDto } from '../../dtos/UpdatePlayer.dto';
 
 @Injectable()
 export class PlayerService {

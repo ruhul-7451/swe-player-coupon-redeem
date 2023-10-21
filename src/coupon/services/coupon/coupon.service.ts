@@ -4,11 +4,11 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Coupon } from 'src/entities/Coupon';
-import { PlayerCoupon } from 'src/entities/PlayerCoupon';
-import { Reward } from 'src/entities/Reward';
-import { PlayerService } from 'src/player/services/player/player.service';
-import { RewardService } from 'src/reward/services/reward/reward.service';
+import { Coupon } from '../../../entities/Coupon';
+import { PlayerCoupon } from '../../../entities/PlayerCoupon';
+import { Reward } from '../../../entities/Reward';
+import { PlayerService } from '../../../player/services/player/player.service';
+import { RewardService } from '../../../reward/services/reward/reward.service';
 import { Repository } from 'typeorm';
 
 @Injectable()
