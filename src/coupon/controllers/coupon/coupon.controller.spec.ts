@@ -15,4 +15,13 @@ describe('CouponController', () => {
   it('should be defined', () => {
     expect(controller).toBeDefined();
   });
+  describe('redeemCoupons', () => {
+    it('should return an array of coupons', async () => {
+      const result = await controller.redeemCoupon({
+        playerId: 1,
+        rewardId: 1,
+      });
+      expect(result).toBeInstanceOf(Object);
+    });
+  });
 });
